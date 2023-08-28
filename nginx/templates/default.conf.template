@@ -1,0 +1,54 @@
+
+upstream default_app {
+    server 127.0.0.1:8000;
+}
+
+upstream upstream-backend {
+  server 127.0.0.1:3000;
+}
+
+server {
+    listen  ${NGINX_PORT};
+    listen  [::]:${NGINX_PORT};
+    server_name www.${NGINX_HOST} ${NGINX_HOST} localhost;
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+
+    location /cristhian-pereira {
+       return 301 https://$host$request_uri;
+    }
+
+    location ~ /.well-known/acme-challenge {
+        allow all;
+        root /tmp/acme_challenge;
+    }
+    
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl http2;
+    server_name ${NGINX_HOST};
+    ssl_certificate /etc/letsencrypt/live/${NGINX_HOST}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/${NGINX_HOST}/privkey.pem;
+
+    location / {
+        root /usr/share/nginx/cv;
+        index index.html index.htm;
+    }
+
+    location /cristhian-pereira {
+        root /usr/share/nginx/html;
+        index index.html index.htm;
+    }
+
+    location /api {
+        proxy_pass http://upstream-backend;
+    }
+
+    location /static/ {
+        alias /static/;
+    }
+}

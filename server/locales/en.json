@@ -1,0 +1,44 @@
+{
+	"uxVoid": "Canceled",
+	"uxDenied": "Denied",
+	"uxErrorToken": "Invalid Token",
+	"uxBlock": "Block",
+	"uxDelete": "Removed",
+	"uxDataNull": "Null",
+	"uxPending": "Pending",
+	"uxDisable": "Disabled",
+	"uxEnable": "Active",
+	"uxFailure": "Error",
+	"uxContact": "Contacted",
+	"uxNotContact": "Not contacted",
+	"uxEmail_Skyangel_success": "The request was sent",
+	"uxEmail_Skyangel_failure": "The request cannot be sent",
+
+	"uxLogin_success": "WELCOME {{name}}",
+	"uxLogin_disable": "[ {{name}} ] your account is deactivated",
+	"uxLogin_pending": "[ {{name}} ] your account is pending",
+	"uxLogin_block": "[ {{name}} ] your account is blocked",
+	"uxLogin_failure": "Bad credentials",
+
+	
+	"uxDeviceCreate_success": "The device has been created",
+	"uxDeviceCreate_failure": "The device could not be created",
+	"uxDeviceUpdate_success": "The device was updated successfully",
+	"uxDeviceUpdate_failure": "The device could not be updated",
+	"uxDeviceDelete_success": "The device was successfully deleted",
+	"uxDeviceDelete_failure": "The device could not be removed",
+	
+	"uxUserRead_success %s": {
+		"one": "The user {{name}} was loaded",
+		"other": "Users were loaded"
+	},
+	"uxUserCreate_success": "The user {{user}} has been created, an email will arrive at the account to confirm your welcome",
+	"uxUserCreate_failure": "The user could not be created",
+	"uxUserUpdate_success": "The user was updated successfully",
+	"uxUserUpdate_failure": "The user could not be updated",
+	"uxUserDelete_success": "The user was successfully deleted",
+	"uxUserDelete_failure": "The user could not be removed",
+	"uxUserActive_success": "The user was active",
+	"uxUserActive_failure": "No se pudo activar el usuario",
+	"uxUserActive_true_failure": "El usuario ya se encuentra activo"
+}

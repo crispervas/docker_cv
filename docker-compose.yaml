@@ -1,0 +1,50 @@
+version: "3.3"
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: dbcv
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+  server:
+    restart: always
+    build: 
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    env_file:
+    - ./server/.env
+    depends_on:
+      - db
+    networks:
+      - app
+  cv:
+    image: nginx
+    container_name: 'nginx-service'
+    environment:
+      - NGINX_HOST=expresapp..com
+      - NGINX_PORT=80
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./cv:/usr/share/nginx/cv:z
+      - ./server:/usr/share/nginx/server:z
+      - ./nginx/templates:/etc/nginx/templates
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /tmp/acme_challenge:/tmp/acme_challenge
+    depends_on:
+      - server
+    networks:
+      - app
+    restart: always
+
+networks:
+  app:
+    driver: bridge

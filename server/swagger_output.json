@@ -1,0 +1,45 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Servicios del proyecto CV",
+    "version": "1.0.0",
+    "title": "CV",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "apiteam@swagger.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "http://acsi.enginegtr.com",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "AUTH",
+      "description": "Autenticaciones"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "securityDefinitions": {
+    "basicAuth": {
+      "type": "basic",
+      "description": "HTTP Basic Authentication. Works over `HTTP` and `HTTPS`"
+    },
+    "bearerAuth": {
+      "type": "http",
+      "description": "HTTP Basic Authentication. Works over `HTTP` and `HTTPS`"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {}
+}

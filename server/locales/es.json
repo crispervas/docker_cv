@@ -1,0 +1,27 @@
+{
+	"uxVoid": "Anulado",
+	"uxDenied": "Denegado",
+	"uxErrorToken": "Token invalido",
+	"uxBlock": "Bloqueado",
+	"uxDelete": "Eliminado",
+	"uxDataNull": "Nulo",
+	"uxPending": "Pendiente",
+	"uxDisable": "Desactivado",
+	"uxEnable": "Activo",
+	"uxFailure": "Error",
+	"uxRegister_success": "Bienvenidos, Gracias por registrarte, por favor verifique en su correo el avance del proceso de admisión",
+	"uxRegisterUpdate_success": "Los datos fueron actualizados",
+	"uxRegister_failure": "Hubo un problema con su inscripción, por favor contactar a soporte",
+	"uxLogin_success": "BIENVENID@ {{name}}",
+	"uxLogin_disable": "[ {{name}} ] su cuenta se encuentra desactivada",
+	"uxLogin_pending": "[ {{name}} ] su cuenta se encuentra pendiente",
+	"uxLogin_block": "[ {{name}} ] su cuenta se encuentra bloqueada",
+	"uxLogin_failure": "Credenciales incorrectas",
+	"uxUsuarioRead_success %s": {
+		"one": "Se cargó el usuario",
+		"other": "Se cargaron usuario"
+	},
+	"uxUsuarioCreate_success": "Felicitaciones, ahora eres un miembro de la comunidad de iglesias cristianas más grande el mundo, por favor mira tu correo y confirma la cuenta",
+	"uxUsuarioUpdate_success": "Se actualizó usuario correctamente",
+	"uxUsuarioDelete_success": "Se eliminó usuario correctamente"
+}
