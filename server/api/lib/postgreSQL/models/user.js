@@ -1,6 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
 var moment = require("moment-timezone");
+const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
     class user extends Model {
         /**
@@ -103,7 +104,23 @@ module.exports = (sequelize, DataTypes) => {
         },
         {
             sequelize,
-            modelName: "user",
+            paranoid: true,
+            modelName: "usuario",
+            hooks: {
+                beforeCreate: async (user) => {
+                    if (user.password) {
+                        const salt = await bcrypt.genSaltSync(10, "a");
+                        user.password = bcrypt.hashSync(user.password, salt);
+                    }
+                },
+                beforeUpdate: async (user) => {
+                    console.log("user", user);
+                    if (user.password) {
+                        const salt = await bcrypt.genSaltSync(10, "a");
+                        user.password = bcrypt.hashSync(user.password, salt);
+                    }
+                },
+            },
         }
     );
     return user;
