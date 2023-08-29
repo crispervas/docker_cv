@@ -12,6 +12,12 @@ module.exports = {
             },
             userId: {
                 type: Sequelize.INTEGER,
+                onUpdate: "CASCADE",
+                onDelete: "SET NULL",
+                references: {
+                    model: "user",
+                    key: "id",
+                },
             },
             name: {
                 type: Sequelize.STRING,

@@ -25,11 +25,13 @@ class UXglobal {
 
         this.ROL = {
             ADMINISTRATOR: 1,
+            CUSTOMER: 2,
         };
 
-        this.GENERO = {
+        this.GENDER = {
             MALE: 1,
             FEMALE: 2,
+            ADMIN: 3
         };
 
         this.TEMPLATE = {

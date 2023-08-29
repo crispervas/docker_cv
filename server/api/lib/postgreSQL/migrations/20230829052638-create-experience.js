@@ -12,6 +12,12 @@ module.exports = {
             },
             cvId: {
                 type: Sequelize.INTEGER,
+                onUpdate: "CASCADE",
+                onDelete: "SET NULL",
+                references: {
+                    model: "cv",
+                    key: "id",
+                },
             },
             name: {
                 type: Sequelize.STRING,

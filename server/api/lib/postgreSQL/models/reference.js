@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            experience.belongsTo(models.cv, {
+            reference.belongsTo(models.cv, {
                 foreignKey: { allowNull: false, name: "cvId" },
                 onDelete: "SET NULL",
             });

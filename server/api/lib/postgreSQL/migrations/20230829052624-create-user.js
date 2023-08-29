@@ -12,12 +12,30 @@ module.exports = {
             },
             rolId: {
                 type: Sequelize.INTEGER,
+                onUpdate: "CASCADE",
+                onDelete: "SET NULL",
+                references: {
+                    model: "rol",
+                    key: "id",
+                },
             },
             genderId: {
                 type: Sequelize.INTEGER,
+                onUpdate: "CASCADE",
+                onDelete: "SET NULL",
+                references: {
+                    model: "gender",
+                    key: "id",
+                },
             },
             countryId: {
                 type: Sequelize.INTEGER,
+                onUpdate: "CASCADE",
+                onDelete: "SET NULL",
+                references: {
+                    model: "country",
+                    key: "id",
+                },
             },
             name: {
                 type: Sequelize.STRING,

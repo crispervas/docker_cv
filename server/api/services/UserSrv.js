@@ -1,9 +1,9 @@
-// const { example } = require("../lib/postgreSQL/models");
+const { user } = require("../lib/postgreSQL/models");
 
-class ExampleSrv {
+class userSrv {
     constructor() {
-        this.table = "example";
-        this.postgreSQL = example;
+        this.table = "user";
+        this.postgreSQL = user;
     }
 
     async getList({ query }) {
@@ -36,24 +36,24 @@ class ExampleSrv {
         return dato || null;
     }
 
-    async create({ example }) {
-        const createId = await this.postgreSQL.create(example);
+    async create({ user }) {
+        const createId = await this.postgreSQL.create(user);
         return createId || null;
     }
 
-    async update({ example, exampleId }) {
-        const updateId = await this.postgreSQL.update(example, {
+    async update({ user, userId }) {
+        const updateId = await this.postgreSQL.update(user, {
             where: {
-                id: exampleId,
+                id: userId,
             },
         });
         return updateId || null;
     }
 
-    async delete({ exampleId }) {
+    async delete({ userId }) {
         const deleteId = await this.postgreSQL.destroy({
             where: {
-                id: exampleId,
+                id: userId,
             },
         });
         return deleteId || null;
@@ -64,19 +64,19 @@ class ExampleSrv {
         return deleteId || null;
     }
 
-    async restore({ exampleId }) {
+    async restore({ userId }) {
         const deleteId = await this.postgreSQL.restore({
             where: {
-                id: exampleId,
+                id: userId,
             },
         });
         return deleteId || null;
     }
 
-    async forcedRestore({ exampleId }) {
+    async forcedRestore({ userId }) {
         const deleteId = await this.postgreSQL.destroy({
             where: {
-                id: exampleId,
+                id: userId,
             },
             force: true,
         });
@@ -84,4 +84,4 @@ class ExampleSrv {
     }
 }
 
-module.exports = ExampleSrv;
+module.exports = userSrv;

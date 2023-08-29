@@ -1,6 +1,6 @@
 const express = require("express");
 const UXglobal = require("../utils/global/UXglobal");
-const ExampleSrv = require("../services/ExampleSrv");
+const RolSrv = require("../services/RolSrv");
 const cacheResponse = require("../utils/middleware/cacheResponse");
 const protectRouters = require("../utils/middleware/protectRouters");
 const permissionRouters = require("../utils/middleware/permissionRouters");
@@ -12,37 +12,36 @@ const { updateTime, createTime } = require("../utils/middleware/bodyParams");
 
 const { FIVE_MINUTES_IN_SECONDS, SIXTY_MINUTES_IN_SECONDS } = require("../utils/time");
 
-function ExampleCtrl(app, url) {
+function RolCtrl(app, url) {
     const router = express.Router();
 
     app.use(`${url}/rol`, router);
     console.log(`${url}/rol`); // eslint-disable-line
 
-    const exampleSrv = new ExampleSrv();
+    const rolSrv = new RolSrv();
 
     router.get("/", async (req, res, next) => {
-        // #swagger.path = '/example'
-        // #swagger.tags = ['Examples']
-        // #swagger.summary = 'Get all examples.'
-        // #swagger.description = 'Endpoint used to get all examples.'
+        // #swagger.path = '/rol'
+        // #swagger.tags = ['ROLES']
+        // #swagger.summary = 'Get all roles.'
+        // #swagger.description = 'Endpoint used to get all roles.'
         cacheResponse(res, FIVE_MINUTES_IN_SECONDS);
         let q = req.query;
         let query = {
-            attributes: ["id", "nombre"],
+            attributes: ["id", "nombre", "code"],
             where: {
                 ...q,
-                grupo: 2,
                 estado: UXglobal.uxCode.ENABLE.code,
             },
             order: [["nombre", "ASC"]],
         };
         try {
-            const examples = await exampleSrv.getList({ query });
+            const roles = await rolSrv.getList({ query });
 
-            let { count, rows } = examples;
+            let { count, rows } = roles;
 
             res.status(200).json({
-                message: res.__n("uxExampleRead_success %s", count),
+                message: res.__n("uxRolRead_success %s", count),
                 count,
                 rows,
             });
@@ -52,4 +51,4 @@ function ExampleCtrl(app, url) {
     });
 }
 
-module.exports = ExampleCtrl;
+module.exports = RolCtrl;

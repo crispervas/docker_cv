@@ -1,5 +1,5 @@
 const boom = require("@hapi/boom");
-const { mongoDB } = require("../../lib/mongoDB/");
+const mongoDB = require("../../lib/mongodb/db");
 const envConfigs = require("../../../config/index");
 const axios = require("axios");
 const moment = require("moment-timezone");

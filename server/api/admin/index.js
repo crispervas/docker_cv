@@ -8,7 +8,7 @@ const config = envConfigs[env];
 
 AdminJS.registerAdapter(AdminJSSequelize);
 
-const translate = require("./locale/es");
+const translate = require("./locale/en");
 const bcrypt = require("bcrypt");
 
 const locale = {

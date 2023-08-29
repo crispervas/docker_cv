@@ -105,7 +105,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             sequelize,
             paranoid: true,
-            modelName: "usuario",
+            modelName: "user",
             hooks: {
                 beforeCreate: async (user) => {
                     if (user.password) {
