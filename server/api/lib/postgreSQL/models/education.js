@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
+            education.belongsTo(models.cv, {
+                foreignKey: { allowNull: false, name: "cvId" },
+                onDelete: "SET NULL",
+            });
         }
     }
     education.init(

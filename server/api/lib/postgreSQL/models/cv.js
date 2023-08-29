@@ -10,6 +10,22 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
+            cv.belongsTo(models.user, {
+                foreignKey: { allowNull: false, name: "userId" },
+                onDelete: "SET NULL",
+            });
+            cv.hasMany(models.reference, {
+                foreignKey: { allowNull: false, name: "cvId" },
+            });
+            cv.hasMany(models.education, {
+                foreignKey: { allowNull: false, name: "cvId" },
+            });
+            cv.hasMany(models.skill, {
+                foreignKey: { allowNull: false, name: "cvId" },
+            });
+            cv.hasMany(models.experience, {
+                foreignKey: { allowNull: false, name: "cvId" },
+            });
         }
     }
     cv.init(

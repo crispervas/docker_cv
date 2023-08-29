@@ -10,6 +10,21 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
+            user.belongsTo(models.rol, {
+                foreignKey: { allowNull: false, name: "rolId" },
+                onDelete: "SET NULL",
+            });
+            user.belongsTo(models.gender, {
+                foreignKey: { allowNull: false, name: "genderId" },
+                onDelete: "SET NULL",
+            });
+            user.belongsTo(models.country, {
+                foreignKey: { allowNull: false, name: "countryId" },
+                onDelete: "SET NULL",
+            });
+            user.hasMany(models.cv, {
+                foreignKey: { allowNull: false, name: "userId" },
+            });
         }
     }
     user.init(
