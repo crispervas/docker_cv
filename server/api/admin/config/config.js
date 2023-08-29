@@ -16,9 +16,7 @@ const sidebarGroups = {
     },
 };
 
-const models = [
-    
-];
+const models = [];
 
 module.exports = {
     models,

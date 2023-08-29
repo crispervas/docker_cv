@@ -8,7 +8,6 @@ const env = process.env.NODE_ENV;
 const config = envConfigs[env];
 
 class BucketLib {
-  
     constructor() {
         this.myConfig = AWS.config.update({
             accessKeyId: config.wsAccess,

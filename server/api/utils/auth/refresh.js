@@ -19,7 +19,6 @@ passport.use(
             const permission = tokenPayload.permission;
 
             try {
-               
             } catch (err) {
                 return cb(err);
             }

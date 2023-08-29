@@ -80,7 +80,6 @@ const withErrorStack = (error, stack, validation, url, method) => {
                 hour: moment().tz("America/Bogota").format("H:m:s"),
                 time: moment().tz("America/Bogota").format(),
             });
-            
         } catch (error) {
             console.log("NO CREÓ: ", error);
         }

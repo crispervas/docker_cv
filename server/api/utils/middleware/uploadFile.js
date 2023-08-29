@@ -101,9 +101,7 @@ const fileUpload = function upload(destinationPath, post, extension = 0) {
                     rol: req.user
                         ? req.user?.perfil?.name.toString()
                         : UXglobal.uxCode.DATA_NULL.code.toString(),
-                    nameUser: req.user
-                        ? req.user.name.toString()
-                        : UXglobal.uxCode.DATA_NULL.code.toString(),
+                    nameUser: req.user ? req.user.name.toString() : UXglobal.uxCode.DATA_NULL.code.toString(),
                     surnameUser: req.user
                         ? req.user.surname.toString()
                         : UXglobal.uxCode.DATA_NULL.code.toString(),

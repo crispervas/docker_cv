@@ -38,7 +38,7 @@ function ExampleCtrl(app, url) {
         };
         try {
             const examples = await exampleSrv.getList({ query });
-           
+
             let { count, rows } = examples;
 
             res.status(200).json({
@@ -46,7 +46,6 @@ function ExampleCtrl(app, url) {
                 count,
                 rows,
             });
-            
         } catch (err) {
             next(err);
         }

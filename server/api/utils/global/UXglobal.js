@@ -17,7 +17,6 @@ class UXglobal {
      * @method __construct
      */
     constructor() {
-      
         this.URL = config.global_url;
         this.EMAIL = config.url;
         this.COPY_EMAIL = config.nodemailer_copy;
@@ -30,14 +29,14 @@ class UXglobal {
 
         this.GENERO = {
             MALE: 1,
-            FEMALE: 2
+            FEMALE: 2,
         };
 
         this.TEMPLATE = {
             WELCOME: 1,
             ACTIVATED: 2,
             EMAIL_FORGOT_PASSWORD: 3,
-            EMAIL_NOTIFICATION: 4
+            EMAIL_NOTIFICATION: 4,
         };
 
         this.NUMERO_CONSECUTIVO = {

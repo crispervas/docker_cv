@@ -1,0 +1,9 @@
+npx sequelize-cli model:generate --name rol  --attributes name:string,access:string,description:text,image:string,code:integer,group:integer,created:jsonb,updated:jsonb,stateName:string,state:integer,unixtime:integer
+npx sequelize-cli model:generate --name gender  --attributes name:string,description:text,code:integer,group:integer,created:jsonb,updated:jsonb,stateName:string,state:integer,unixtime:integer
+npx sequelize-cli model:generate --name country  --attributes name:string,description:text,image:string,code:integer,money:string,created:jsonb,updated:jsonb,stateName:string,state:integer,unixtime:integer
+npx sequelize-cli model:generate --name user  --attributes rolId:integer,genderId:integer,countryId:integer,name:string,surname:string,image:string,email:string,password:string,birthday:date,address:string,phone:string,session:date,created:jsonb,updated:jsonb,stateName:string,state:integer,unixtime:integer
+npx sequelize-cli model:generate --name cv  --attributes userId:integer,name:string,description:text,resume:text,photo:string,created:jsonb,updated:jsonb,stateName:string,state:integer,unixtime:integer
+npx sequelize-cli model:generate --name experience  --attributes cvId:integer,name:string,description:text,position:string,dateInitial:date,dateFinish:date,created:jsonb,updated:jsonb,stateName:string,state:integer,unixtime:integer
+npx sequelize-cli model:generate --name education  --attributes cvId:integer,name:string,title:string,dateInitial:date,dateFinish:date,created:jsonb,updated:jsonb,stateName:string,state:integer,unixtime:integer
+npx sequelize-cli model:generate --name reference  --attributes cvId:integer,name:string,position:string,phone:string,email:string,created:jsonb,updated:jsonb,stateName:string,state:integer,unixtime:integer
+npx sequelize-cli model:generate --name skill  --attributes cvId:integer,name:string,description:text,created:jsonb,updated:jsonb,stateName:string,state:integer,unixtime:integer

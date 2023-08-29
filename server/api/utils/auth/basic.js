@@ -8,9 +8,7 @@ const UXglobal = require("../global/UXglobal");
 
 passport.use(
     new BasicStrategy(async function (username, clave, cb) {
-
         try {
-            
         } catch (err) {
             return cb(err);
         }

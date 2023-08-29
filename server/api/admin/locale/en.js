@@ -49,15 +49,19 @@ const translations = {
         successfullyUpdated: "Record updated successfully",
         thereWereValidationErrors: "There are validation errors - check them out below.",
         successfullyCreated: "Successfully created a new record",
-        bulkDeleteError: "An error occurred while deleting the records. Check the console for more information.",
-        errorFetchingRecords: "An error occurred while getting the logs. Check the console for more information.",
-        errorFetchingRecord: "An error occurred while getting the record. Check the console for more information.",
+        bulkDeleteError:
+            "An error occurred while deleting the records. Check the console for more information.",
+        errorFetchingRecords:
+            "An error occurred while getting the logs. Check the console for more information.",
+        errorFetchingRecord:
+            "An error occurred while getting the record. Check the console for more information.",
         noRecordsSelected: "You have not selected any record",
         theseRecordsWillBeRemoved: "The following record will be deleted",
         theseRecordsWillBeRemoved_plural: "The following records will be deleted",
         pickSomeFirstToRemove: "To delete records, you must first select them",
         error404Resource: "Resource with id {{resourceId}} provided cannot be found",
-        error404Action: "Resource with ID {{resourceId}} provided does not have an action with name: {{actionName}}",
+        error404Action:
+            "Resource with ID {{resourceId}} provided does not have an action with name: {{actionName}}",
         error404Record: "Resource of given id: {{resourceId}} does not have a record with id: {{recordId}}",
         seeConsoleForMore: "See the developer console for more details...",
         noActionComponent: "You have to implement the action component for your action.",
